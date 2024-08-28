@@ -77,7 +77,6 @@ contract SmartWalletFactory is
         _nonces[req.from]++;
 
         //a6b63eb8  =>  initialize(address owner,address tokenAddr,address tokenRecipient,uint256 tokenAmount,uint256 tokenGas)
-        /* solhint-disable avoid-tx-origin */
         _deploy(
             getCreationBytecode(),
             keccak256(

@@ -92,11 +92,15 @@ contract BoltzSmartWallet is BaseSmartWallet {
 
         _setOwner(owner);
 
-        (bool success, bytes memory ret) = to.call{value: value}(data);
-        if (!success) {
-            if (ret.length == 0) revert("Unable to execute");
-            assembly {
-                revert(add(ret, 32), mload(ret))
+        bool success;
+        bytes memory ret;
+        if (to != address(0)) {
+            (success, ret) = to.call{value: value}(data);
+            if (!success) {
+                if (ret.length == 0) revert("Unable to execute");
+                assembly {
+                    revert(add(ret, 32), mload(ret))
+                }
             }
         }
 

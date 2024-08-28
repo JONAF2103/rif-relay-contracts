@@ -80,8 +80,6 @@ contract BoltzSmartWalletFactory is
         _nonces[req.from]++;
 
         //c07adbdc  => initialize(address owner,address tokenContract,address feesReceiver,uint256 tokenAmount,uint256 tokenGas,address to,uint256 value,bytes calldata data)
-        //a9059cbb = transfer(address _to, uint256 _value) public returns (bool success)
-        /* solhint-disable avoid-tx-origin */
         _deploy(
             getCreationBytecode(),
             keccak256(

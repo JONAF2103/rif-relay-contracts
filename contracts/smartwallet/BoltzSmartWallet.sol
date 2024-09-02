@@ -94,6 +94,7 @@ contract BoltzSmartWallet is BaseSmartWallet {
 
         bool success;
         bytes memory ret;
+        // Although this check isn't strictly necessary, it's included to improve the transaction estimation
         if (to != address(0)) {
             (success, ret) = to.call{value: value}(data);
             if (!success) {

@@ -38,7 +38,6 @@ contract MinimalBoltzSmartWalletFactory is
         _nonces[req.from]++;
 
         // 3d326736  => initialize(address owner,address feesReceiver,uint256 tokenAmount,uint256 tokenGas,address to,bytes calldata data)
-        /* solhint-disable avoid-tx-origin */
         _deploy(
             getCreationBytecode(),
             keccak256(

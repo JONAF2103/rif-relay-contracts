@@ -1,6 +1,6 @@
 {
   "name": "@rsksmart/rif-relay-contracts",
-  "version": "2.1.1-beta.0",
+  "version": "2.1.1-beta.1",
   "private": false,
   "description": "This project contains all the contracts needed for the rif relay system.",
   "license": "MIT",

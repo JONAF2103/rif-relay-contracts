@@ -13,6 +13,7 @@ use(chaiAsPromised);
 describe('Deploy Script', function () {
   describe('deployContracts', function () {
     const testAddress = '0x145845fd06c85B7EA1AA2d030E1a747B3d8d15D7';
+
     beforeEach(function () {
       const contract = new Contract(testAddress, []);
       const contractFactoryStub = sinon.createStubInstance(ContractFactory);

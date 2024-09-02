@@ -69,6 +69,7 @@ describe('Penalizer Contract', function () {
 
   describe('Version Penalizer', function () {
     let penalizer: MockContract<Penalizer>;
+
     it('Should retrieve the penalizer version', async function () {
       const penalizerFactory: MockContractFactory<Penalizer__factory> =
         await smock.mock<Penalizer__factory>('Penalizer');
@@ -83,6 +84,7 @@ describe('Penalizer Contract', function () {
 
   describe('Penalize Repeated nonce method() tests', function () {
     let penalizer: MockContract<Penalizer>;
+
     beforeEach(async function () {
       [relayWorker, otherUser1, otherUser2] = (await ethers.getSigners()) as [
         SignerWithAddress,

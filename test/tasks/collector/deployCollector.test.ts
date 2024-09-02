@@ -77,6 +77,7 @@ describe('Deploy Script', function () {
     describe('if the configuration file exists', function () {
       let readFileSyncStub: SinonStub;
       let fsExistsSyncStub: SinonStub;
+
       beforeEach(function () {
         fsExistsSyncStub = sinon.stub(fs, 'existsSync');
         fsExistsSyncStub.onFirstCall().returns(true);

@@ -105,6 +105,7 @@ describe('Remove Contracts Script', function () {
         await expectRemoveContractsNotToBeRejected(taskArgs);
       });
     });
+
     describe('remoteContract using one contract and multiple verifiers', function () {
       const taskArgs: AllowedContractsArgs = {
         contractList: A_TOKEN_ADDRESS,

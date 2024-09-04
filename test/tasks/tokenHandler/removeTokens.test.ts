@@ -105,6 +105,7 @@ describe('Remove Tokens Script', function () {
         await expectRemoveTokensNotToBeRejected(taskArgs);
       });
     });
+
     describe('remoteToken using one token and multiple verifiers', function () {
       const taskArgs: AllowedTokensArgs = {
         tokenList: A_TOKEN_ADDRESS,

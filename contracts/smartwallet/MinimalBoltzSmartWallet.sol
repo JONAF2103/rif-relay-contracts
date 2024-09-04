@@ -34,11 +34,16 @@ contract MinimalBoltzSmartWallet {
 
         BoltzUtils.validateClaimSignature(data);
 
-        (bool success, bytes memory ret) = to.call(data);
-        if (!success) {
-            if (ret.length == 0) revert("Unable to execute");
-            assembly {
-                revert(add(ret, 32), mload(ret))
+        bool success;
+        bytes memory ret;
+        // Although this check isn't strictly necessary, it's included to improve the transaction estimation
+        if (to != address(0)) {
+            (success, ret) = to.call(data);
+            if (!success) {
+                if (ret.length == 0) revert("Unable to execute");
+                assembly {
+                    revert(add(ret, 32), mload(ret))
+                }
             }
         }
 
